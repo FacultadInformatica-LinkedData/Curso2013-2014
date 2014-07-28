@@ -1,0 +1,229 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex: <http://example.com/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rev: <http://purl.org/stuff/rev#> .
+@prefix mappingpedia_vocabulary: <http://mappingpedia.linkeddata.es/> .
+@prefix mappingpedia_instances: <http://mappingpedia.linkeddata.es/> .
+@base <http://mappingpedia.org/rdb2rdf/r2rml/tc/> .
+
+
+
+
+<TriplesMapCity>
+    a rr:TriplesMap;
+        
+	rr:logicalTable [ 
+        rr:tableName  "City" 
+        # rr:sqlQuery  """SELECT Student.id AS id, Student.name AS name, Student.webpage AS webpage, Student.phone as phone, Student.email AS email FROM Student, Sport WHERE Student.Sport = Sport.ID""" 
+    ];
+	
+    rr:subjectMap [    
+		a rr:Subject;
+		rr:template "http://mappingpedia.linkeddata.es/resources/City/{id}";
+		rr:termType rr:IRI;
+		rr:class <http://mappingpedia.linkeddata.es/vocabulary/City>;
+	];
+
+	rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/Name> ]; 
+      rr:objectMap    [ 
+             rr:column "Name";
+             rr:termType rr:Literal;
+      ];
+    ];
+	
+    rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/CountryCode> ]; 
+      rr:objectMap    [ 
+             rr:column "CountryCode";
+             rr:termType rr:Literal;
+      ];
+    ];
+	
+    rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/District> ]; 
+      rr:objectMap    [ 
+             rr:column "District";
+             rr:termType rr:Literal;
+      ];
+    ];	
+	
+    rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/Population> ]; 
+      rr:objectMap    [ 
+             rr:column "Population";
+             rr:termType rr:Literal;
+      ];
+    ];		
+.
+
+<TriplesMapCountry>
+    a rr:TriplesMap;
+        
+	rr:logicalTable [ 
+        rr:tableName  "Country" 
+    ];
+	
+    rr:subjectMap [    
+		a rr:Subject;
+		rr:template "http://mappingpedia.linkeddata.es/resources/Country/{Code}";
+		rr:termType rr:IRI;
+		rr:class <http://mappingpedia.linkeddata.es/vocabulary/Country>;
+	];
+
+	rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/Name> ]; 
+      rr:objectMap    [ 
+             rr:column "Name";
+             rr:termType rr:Literal;
+      ];
+    ];
+	
+    rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/Continent> ]; 
+      rr:objectMap    [ 
+             rr:column "Continent";
+             rr:termType rr:Literal;
+      ];
+    ];
+	
+    rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/Region> ]; 
+      rr:objectMap    [ 
+             rr:column "Region";
+             rr:termType rr:Literal;
+      ];
+    ];	
+	
+    rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/SurfaceArea> ]; 
+      rr:objectMap    [ 
+             rr:column "SurfaceArea";
+             rr:termType rr:Literal;
+      ];
+];
+rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/IndepYear> ]; 
+      rr:objectMap    [ 
+             rr:column "IndepYear";
+             rr:termType rr:Literal;
+      ];
+];
+
+
+    rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/Population> ]; 
+      rr:objectMap    [ 
+             rr:column "Population";
+             rr:termType rr:Literal;
+      ];
+
+];
+rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/LifeExpectancy> ]; 
+      rr:objectMap    [ 
+             rr:column "LifeExpectancy";
+             rr:termType rr:Literal;
+      ];
+
+];
+rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/GNP> ]; 
+      rr:objectMap    [ 
+             rr:column "GNP";
+             rr:termType rr:Literal;
+      ];
+];
+rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/GNPOld> ]; 
+      rr:objectMap    [ 
+             rr:column "GNPOld";
+             rr:termType rr:Literal;
+      ];
+];
+rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/LocalName> ]; 
+      rr:objectMap    [ 
+             rr:column "LocalName";
+             rr:termType rr:Literal;
+      ];
+
+];
+rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/GovernmentForm> ]; 
+      rr:objectMap    [ 
+             rr:column "GovernmentForm";
+             rr:termType rr:Literal;
+      ];
+];
+rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/HeadOfState> ]; 
+      rr:objectMap    [ 
+             rr:column "HeadOfState";
+             rr:termType rr:Literal;
+      ];
+];
+rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/Capital> ]; 
+      rr:objectMap    [ 
+             rr:column "Capital";
+             rr:termType rr:Literal;
+      ];
+];
+rr:predicateObjectMap
+    [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/vocabulary/Code2> ]; 
+      rr:objectMap    [ 
+             rr:column "Code2";
+             rr:termType rr:Literal;
+      ];
+    ];		
+.
+
+<TriplesMapCountryLanguage>
+        a rr:TriplesMap;
+       
+        rr:logicalTable [ rr:tableName  "CountryLanguage" ];
+
+        rr:subjectMap [    
+                a rr:Subject;
+                rr:template "http://mappingpedia.linkeddata.es/countryCode/{CountryCode}";
+                rr:termType rr:IRI;
+                rr:class <http://mappingpedia.linkeddata.es/countryCode>;
+        ];
+
+        rr:predicateObjectMap [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/countryCode> ]; 
+      rr:objectMap [ rr:column "CountryCode"; rr:termType rr:Literal; ];
+    ];
+        
+        rr:predicateObjectMap [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/isOfficial> ]; 
+      rr:objectMap [ rr:column "IsOfficial"; rr:termType rr:Literal; ];
+    ];
+        
+        rr:predicateObjectMap [ 
+      rr:predicateMap [ rr:constant <http://mappingpedia.linkeddata.es/percentage> ]; 
+      rr:objectMap [ rr:column "Percentage"; rr:termType rr:Literal; ];
+    ];
+.
